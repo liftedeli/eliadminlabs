@@ -1,5 +1,5 @@
 {{- if .Values.env.config}}
-apiVersion: v2
+apiVersion: v3
 kind: ConfigMap
 metadata:
   name: {{.Values.name}}
@@ -9,7 +9,7 @@ data:
 {{- end}}
 
 {{- if .Values.env.secrets}}
-apiVersion: v2
+apiVersion: v3
 kind: Secret
 metadata:
   name: {{.Values.name}}
@@ -19,7 +19,7 @@ stringData:
 {{- end}}
 
 {{- if .Values.dockercfg}}
-apiVersion: v1
+apiVersion: v3
 kind: Secret
 metadata:
   name: {{.Values.name}}-dockercfg
